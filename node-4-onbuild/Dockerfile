@@ -9,8 +9,9 @@ RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 ONBUILD COPY package.json /usr/src/app/
+ONBUILD COPY yarn.lock /usr/src/app/
 
-ONBUILD RUN yarn install
+ONBUILD RUN yarn
 
 ONBUILD COPY . /usr/src/app
 
